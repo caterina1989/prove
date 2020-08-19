@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    
-    public static void main(String... argvs) {
 
-        List<Spesa> lista = new ArrayList<Spesa>();
-        List<Payer> payers = new ArrayList<Payer>();
+    List<Payer> payers;
+    List<Spesa> lista;
+
+    public Main() {
+        lista = new ArrayList<Spesa>();
+        payers = new ArrayList<Payer>();
 
         Payer fabrizio = new Payer("Fabrizio");
         Payer katia = new Payer("Katia");
@@ -24,24 +26,29 @@ public class Main {
         lista.add(birra);
         lista.add(pizza);
 
+        getSpesaByPayer("Fabrizio");
+
+    }
+
+    public static void main(String... argvs) {
+        new Main();
+
     }
 
     public int getSpesaByPayer(String name) {
 
-        List<Payer> payers;
-        List<Spesa> lista;
         int totale = 0;
 
-        for(int i = 0; i < payers.size(); i++){
+        for (int i = 0; i < payers.size(); i++) {
             Payer tizio = payers.get(i);
 
-                for(int x = 0; x < lista.size(); x++){
-                    Spesa cosa = lista.get(x);
+            for (int x = 0; x < lista.size(); x++) {
+                Spesa cosa = lista.get(x);
 
-                        if(tizio.getNome().equals(name)){
-                            totale = cosa.getImporto();
-                        }
+                if (tizio.getNome().equals(name)) {
+                    totale = cosa.getImporto();
                 }
+            }
         }
 
         return totale;
