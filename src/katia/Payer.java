@@ -1,4 +1,4 @@
-package java.main;
+package katia;
 
 public class Payer {
     

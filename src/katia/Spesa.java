@@ -1,4 +1,4 @@
-package java.main;
+package katia;
 
 public class Spesa {
 
@@ -26,6 +26,14 @@ public class Spesa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Payer getPayer() {
+        return payer;
+    }
+
+    public void setPayer(Payer payer) {
+        this.payer = payer;
     }
     
 }
