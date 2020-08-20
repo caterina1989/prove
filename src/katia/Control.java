@@ -19,6 +19,7 @@ public class Control {
         Spesa piscina = new Spesa("giugra", 16, katia);
         Spesa birra = new Spesa("birre", 10, fabrizio);
         Spesa pizza = new Spesa("pizzeria", 30, katia);
+        Spesa birrette = new Spesa("birrette", 40, fabrizio);
 
         payers.add(fabrizio);
         payers.add(katia);
@@ -26,8 +27,12 @@ public class Control {
         lista.add(piscina);
         lista.add(birra);
         lista.add(pizza);
+        lista.add(birrette);
 
-        System.out.println(getSpesaByPayer("Katia"));
+        // System.out.println(getSpesaByPayer("Katia"));
+
+        System.out.println(getDifference());
+
     }
 
     public int getSpesaByPayer(String name) {
@@ -42,6 +47,16 @@ public class Control {
             }
         }
         return sum;
+    }
+
+    public int getDifference() {
+
+        int uno = this.getSpesaByPayer("Katia");
+        int due = this.getSpesaByPayer("Fabrizio");
+
+        int diff = due - uno;
+
+        return diff;
     }
 
     // public int getSpesaByPayer(String name) {
