@@ -31,7 +31,7 @@ public class Control {
 
         // System.out.println(getSpesaByPayer("Katia"));
 
-        System.out.println(getDifference());
+       // System.out.println(getDifference());
 
     }
 
@@ -57,6 +57,10 @@ public class Control {
         int diff = due - uno;
 
         return diff;
+    }
+
+    public void executeCustomAction(CustomAction a) {
+        a.action(this);
     }
 
     // public int getSpesaByPayer(String name) {
