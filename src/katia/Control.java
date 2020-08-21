@@ -29,6 +29,8 @@ public class Control {
         lista.add(pizza);
         lista.add(birrette);
 
+       // addReader(new Reader(this));
+
         // System.out.println(getSpesaByPayer("Katia"));
 
        // System.out.println(getDifference());
@@ -62,6 +64,8 @@ public class Control {
     public void executeCustomAction(CustomAction a) {
         a.action(this);
     }
+
+    
 
     // public int getSpesaByPayer(String name) {
     //     int totale = 0;
