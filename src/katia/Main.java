@@ -5,6 +5,10 @@ public class Main {
 
         Control control = new Control();
 
+        Bus bus = new Bus();
+
+        control.setBus(bus);
+
         control.executeCustomAction(new CustomAction() {
 
             @Override

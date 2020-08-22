@@ -1,10 +1,9 @@
 package katia;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public interface Reader {
 
-    
-    
+    public String getName();
+
+    public void actionReader(Event x);
+
 }

@@ -7,6 +7,7 @@ public class Control {
 
     List<Payer> payers;
     List<Spesa> lista;
+    private Bus bus;
 
     public Control() {
 
@@ -63,6 +64,10 @@ public class Control {
 
     public void executeCustomAction(CustomAction a) {
         a.action(this);
+    }
+
+    public void setBus(Bus bus) {
+        this.bus = bus;
     }
 
     
