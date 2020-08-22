@@ -25,4 +25,16 @@ public class Payer {
         this.nome = nome;
     }
 
+    public void save(Bus bus){
+        bus.fireEvent(new Event(){
+
+            @Override
+            public String getName() {
+                // TODO Auto-generated method stub
+                return "save";
+            }
+
+        });
+    }
+
 }

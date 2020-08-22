@@ -36,4 +36,15 @@ public class Spesa {
         this.payer = payer;
     }
     
+    public void save(Bus bus){
+        bus.fireEvent(new Event(){
+
+            @Override
+            public String getName() {
+                // TODO Auto-generated method stub
+                return "save";
+            }
+
+        });
+    }
 }

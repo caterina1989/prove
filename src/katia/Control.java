@@ -9,7 +9,9 @@ public class Control {
     List<Spesa> lista;
     private Bus bus;
 
-    public Control() {
+    public Control(Bus bus) {
+
+        this.bus = bus;
 
         lista = new ArrayList<Spesa>();
         payers = new ArrayList<Payer>();
@@ -30,11 +32,39 @@ public class Control {
         lista.add(pizza);
         lista.add(birrette);
 
-       // addReader(new Reader(this));
+        bus.addReader(new Reader() {
+
+            @Override
+            public String getName() {
+                // TODO Auto-generated method stub
+                return "uno";
+            }
+
+            @Override
+            public void actionReader(Event x) {
+                //
+                System.out.println("uno");
+            }
+        });
+
+        bus.addReader(new Reader() {
+
+            @Override
+            public String getName() {
+                // TODO Auto-generated method stub
+                return "save";
+            }
+
+            @Override
+            public void actionReader(Event x) {
+                //
+                System.out.println("saveS");
+            }
+        });
 
         // System.out.println(getSpesaByPayer("Katia"));
 
-       // System.out.println(getDifference());
+        // System.out.println(getDifference());
 
     }
 
@@ -66,24 +96,18 @@ public class Control {
         a.action(this);
     }
 
-    public void setBus(Bus bus) {
-        this.bus = bus;
-    }
-
-    
-
     // public int getSpesaByPayer(String name) {
-    //     int totale = 0;
-    //     for (int i = 0; i < payers.size(); i++) {
-    //         Payer tizio = payers.get(i);
-    //         for (int x = 0; x < lista.size(); x++) {
-    //             Spesa cosa = lista.get(x);
-    //             if (tizio.getNome().equals(name)) {
-    //                 totale = cosa.getImporto();
-    //             }
-    //         }
-    //     }
-    //     return totale;
+    // int totale = 0;
+    // for (int i = 0; i < payers.size(); i++) {
+    // Payer tizio = payers.get(i);
+    // for (int x = 0; x < lista.size(); x++) {
+    // Spesa cosa = lista.get(x);
+    // if (tizio.getNome().equals(name)) {
+    // totale = cosa.getImporto();
+    // }
+    // }
+    // }
+    // return totale;
     // }
 
 }
