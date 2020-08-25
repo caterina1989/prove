@@ -1,5 +1,3 @@
-package katia;
-
 public class Spesa {
 
     public String nome;
@@ -36,15 +34,11 @@ public class Spesa {
         this.payer = payer;
     }
     
-    public void save(Bus bus){
-        bus.fireEvent(new Event(){
+    public void save(Bus bus, String message){
 
-            @Override
-            public String getName() {
-                // TODO Auto-generated method stub
-                return "save";
-            }
-
-        });
+         bus.fireEvent(new EventMessage(message));
     }
 }
+
+// save(bus) + fireEvent(new EventSave) - EventSave implements Event
+// 

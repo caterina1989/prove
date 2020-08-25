@@ -1,7 +1,5 @@
-package katia;
-
 public class Main {
-    public static void main(String... argvs) {
+    public static void main(String[] argvs) {
 
         Bus bus = new Bus();
 
@@ -22,16 +20,29 @@ public class Main {
 
             @Override
             public String getName() {
-                // TODO Auto-generated method stub
-                return "uno";
+                return "nome: uno";
             }
+
+            
+        });
+
+        bus.fireEvent(new Event() {
+
+            @Override
+            public String getName() {
+                return "nome: save";
+            }
+
+            
+
         });
 
         Payer payer = new Payer("pippo");
-        payer.save(bus, "message1");
+        payer.save(bus, "message payer");
 
         Spesa spesa = new Spesa(null, 0, payer);
-        spesa.save(bus, "message 2");
+        spesa.save(bus, "message spesa");
+
 
     }
 

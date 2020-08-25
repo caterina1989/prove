@@ -1,5 +1,3 @@
-package katia;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,11 +5,8 @@ public class Control {
 
     List<Payer> payers;
     List<Spesa> lista;
-    private Bus bus;
 
     public Control(Bus bus) {
-
-        this.bus = bus;
 
         lista = new ArrayList<Spesa>();
         payers = new ArrayList<Payer>();
@@ -36,14 +31,13 @@ public class Control {
 
             @Override
             public String getName() {
-                // TODO Auto-generated method stub
-                return "uno";
+                return "nome: uno";
             }
 
             @Override
             public void actionReader(Event x) {
                 //
-                System.out.println("uno");
+                System.out.println("NOME: UNO");
             }
         });
 
@@ -51,14 +45,16 @@ public class Control {
 
             @Override
             public String getName() {
-                // TODO Auto-generated method stub
-                return "save";
+                return "eventMessage";
             }
 
             @Override
-            public void actionReader(Event x) {
+            public void actionReader(Event e) {
                 //
-                System.out.println("saveS");
+                if(e instanceof EventMessage){
+                   System.out.println(((EventMessage)e).getMessage());
+                }
+                //System.out.println(e.getMessage());
             }
         });
 

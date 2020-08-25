@@ -1,5 +1,3 @@
-package katia;
-
 public interface Reader {
 
     public String getName();
