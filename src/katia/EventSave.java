@@ -1,18 +1,18 @@
 public class EventSave implements Event {
 
-    public String save;
-  
+    public Spesa spesa;
 
     @Override
     public String getName() {      
         return "eventSave";
     }
     
-     public EventSave(String save) {
-        this.save = save;
+     public EventSave(Spesa spesa) {
+        this.spesa = spesa;
     }   
 
-    public String getSave() {
-        return save;
+    public Spesa getSpesa() {
+        return spesa;
     }
+
 }

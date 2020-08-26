@@ -41,7 +41,7 @@ public class Main {
         payer.savePayer(bus, "message payer");
 
         Spesa spesa = new Spesa(null, 0, payer);
-        spesa.saveSpesa(bus, spesa);
+        spesa.saveSpesa(bus);
 
 
     }
