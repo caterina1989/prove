@@ -34,11 +34,8 @@ public class Spesa {
         this.payer = payer;
     }
     
-    public void save(Bus bus, String message){
+    public void saveSpesa(Bus bus, Spesa spesa){
 
-         bus.fireEvent(new EventMessage(message));
+         bus.fireEvent(new EventSave("salvato"));
     }
 }
-
-// save(bus) + fireEvent(new EventSave) - EventSave implements Event
-// 

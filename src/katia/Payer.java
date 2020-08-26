@@ -23,7 +23,7 @@ public class Payer {
         this.nome = nome;
     }
 
-    public void save(Bus bus, String message){
+    public void savePayer(Bus bus, String message){
 
         bus.fireEvent(new EventMessage(message));
  

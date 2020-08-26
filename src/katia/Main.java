@@ -38,10 +38,10 @@ public class Main {
         });
 
         Payer payer = new Payer("pippo");
-        payer.save(bus, "message payer");
+        payer.savePayer(bus, "message payer");
 
         Spesa spesa = new Spesa(null, 0, payer);
-        spesa.save(bus, "message spesa");
+        spesa.saveSpesa(bus, spesa);
 
 
     }
