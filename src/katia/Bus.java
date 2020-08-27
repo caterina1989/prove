@@ -1,35 +1,43 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Bus {
+	//
+	private List<Event> events = new ArrayList<Event>();
 
-    List<Reader> readers = new ArrayList<Reader>();
+	/**
+	 * Registra un evento
+	 * 
+	 * @param event
+	 */
+	public void registerEvent(Event event) {
+		//
+		synchronized (events) {
+			//
+			events.add(event);
+		}
 
-    public void fireEvent(Event e) {
-        // dato event estrarre il nome dall event e ricercare nella lista dei reader
-        // tutti quelli chehanno lo
-        // stesso nome. per ogni reader trovato eseguire azione del reader passando
-        // event.
+	}
 
-        for (int i = 0; i < readers.size(); i++) {
-            Reader uno = readers.get(i);
-
-            if (e.getName().equals(uno.getName())) {
-
-                uno.actionReader(e);
-            }
-        }
-
-    }
-
-    public void addReader(Reader r) {
-        // Aggiungre readaer alla lista
-
-        readers.add(r);
-
-    }
-
-    // piu reader in una lista, quando si implementa un event verra passato a tutti
-    // i reader
-
+	/**
+	 * Spara un evento
+	 * 
+	 * @param eventName
+	 * @param map
+	 */
+	public void fireEvent(String eventName, Object param) {
+		//
+		Iterator<Event> iterator = events.iterator();
+		//
+		while (iterator.hasNext()) {
+			//
+			Event event = (Event) iterator.next();
+			//
+			if (eventName.equals(event.getName())) {
+				//
+				event.onEvent(param);
+			}
+		}
+	}
 }

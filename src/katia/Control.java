@@ -27,37 +27,6 @@ public class Control {
         lista.add(pizza);
         lista.add(birrette);
 
-        bus.addReader(new Reader() {
-
-            @Override
-            public String getName() {
-                return "nome: uno";
-            }
-
-            @Override
-            public void actionReader(Event x) {
-                //
-                System.out.println("NOME: UNO");
-            }
-        });
-
-        bus.addReader(new Reader() {
-
-            @Override
-            public String getName() {
-                return "eventMessage";
-            }
-
-            @Override
-            public void actionReader(Event e) {
-                //
-                if(e instanceof EventMessage){
-                   System.out.println(((EventMessage)e).getMessage());
-                }
-                //System.out.println(e.getMessage());
-            }
-        });
-
         // System.out.println(getSpesaByPayer("Katia"));
 
         // System.out.println(getDifference());

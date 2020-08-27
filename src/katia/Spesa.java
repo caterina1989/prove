@@ -35,7 +35,6 @@ public class Spesa {
     }
     
     public void saveSpesa(Bus bus){
-
-         bus.fireEvent(new EventSave(this));
+        EventSave.fireEvent(bus, this);
     }
 }

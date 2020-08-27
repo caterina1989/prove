@@ -24,8 +24,6 @@ public class Payer {
     }
 
     public void savePayer(Bus bus, String message){
-
-        bus.fireEvent(new EventMessage(message));
  
     }
 

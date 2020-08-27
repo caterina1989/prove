@@ -16,34 +16,17 @@ public class Main {
 
         });
 
-        bus.fireEvent(new Event() {
-
-            @Override
-            public String getName() {
-                return "nome: uno";
-            }
-
-            
-        });
-
-        bus.fireEvent(new Event() {
-
-            @Override
-            public String getName() {
-                return "nome: save";
-            }
-
-            
-
-        });
-
-        Payer payer = new Payer("pippo");
-        payer.savePayer(bus, "message payer");
-
-        Spesa spesa = new Spesa(null, 0, payer);
+        Spesa spesa = new Spesa(null, 0, new Payer("nome"));
         spesa.saveSpesa(bus);
 
+        bus.registerEvent(new EventSave() {
 
+            @Override
+            public void onSave(Spesa spesa) {
+                //
+                // Ho la spesa
+            }
+        });
     }
 
 }

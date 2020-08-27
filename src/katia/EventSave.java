@@ -1,18 +1,22 @@
-public class EventSave implements Event {
+public abstract class EventSave implements Event {
 
-    public Spesa spesa;
+    public static String NAME = EventSave.class.getName();
 
     @Override
     public String getName() {      
-        return "eventSave";
+        return NAME;
     }
+   
+    @Override
+    public void onEvent(Object param) {
+        //
+        this.onSave((Spesa) param);
+    }     
+
+    public abstract void onSave(Spesa spesa);
+   
     
-     public EventSave(Spesa spesa) {
-        this.spesa = spesa;
-    }   
-
-    public Spesa getSpesa() {
-        return spesa;
+    public static void fireEvent(Bus bus, Spesa spesa){
+        bus.fireEvent(EventSave.NAME, spesa);
     }
-
 }
