@@ -16,14 +16,15 @@ public class Main {
 
         });
 
-        Spesa spesa = new Spesa(null, 0, new Payer("nome"));
+        Spesa spesa = new Spesa(null, 0, new Payer("fab"));
         spesa.saveSpesa(bus);
 
         bus.registerEvent(new EventSave() {
 
             @Override
-            public void onSave(Spesa spesa) {
+            public void onSave(Spesa s) {
                 //
+                System.out.println(s.getPayer().getNome());
                 // Ho la spesa
             }
         });

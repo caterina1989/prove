@@ -33,8 +33,9 @@ public class Spesa {
     public void setPayer(Payer payer) {
         this.payer = payer;
     }
-    
-    public void saveSpesa(Bus bus){
+
+    public void saveSpesa(Bus bus) {
+
         EventSave.fireEvent(bus, this);
     }
 }
