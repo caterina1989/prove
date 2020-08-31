@@ -28,7 +28,7 @@ public class Bus {
      * @param map
      * @param msg
      */
-    public void fireEvent(String eventName, Map<String, Object> map, String msg) {
+    public void fireEvent(String eventName, Map<String, Object> map) {
         //
         Iterator<Event> iterator = events.iterator();
         //
@@ -38,7 +38,7 @@ public class Bus {
             //
             if (eventName.equals(event.getName())) {
                 //
-                event.onEvent(map, msg);
+                event.onEvent(map);
             }
         }
     }

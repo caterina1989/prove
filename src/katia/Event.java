@@ -4,6 +4,6 @@ public interface Event {
 
     public abstract String getName();
 
-    public abstract void onEvent(Map<String,Object> map, String msg);
+    public abstract void onEvent(Map<String,Object> map);
 
 }

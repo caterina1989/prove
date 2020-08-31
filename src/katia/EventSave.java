@@ -11,9 +11,10 @@ public abstract class EventSave implements Event {
     }
 
     @Override
-    public void onEvent(Map<String,Object> map, String msg) {
+    public void onEvent(Map<String,Object> map) {
         //
         this.onSave((Spesa) map.get("pewex"));
+        System.out.println(map.get("messaggio"));
     }
 
     public abstract void onSave(Spesa spesa);
@@ -22,7 +23,8 @@ public abstract class EventSave implements Event {
 
         Map<String, Object> map = new HashMap<>();
         map.put("pewex", spesa);
+        map.put("messaggio", msg);
 
-        bus.fireEvent(EventSave.NAME, map, msg);
+        bus.fireEvent(EventSave.NAME, map);
     }
 }

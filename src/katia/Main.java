@@ -10,14 +10,11 @@ public class Main {
             @Override
             public void action(Control c) {
 
-                System.out.println("Fabrizio");
+            //    System.out.println("Fabrizio");
 
             }
 
         });
-
-        Spesa spesa = new Spesa(null, 0, new Payer("fab"));
-        spesa.saveSpesa(bus, "msg");
 
         bus.registerEvent(new EventSave() {
 
@@ -28,6 +25,11 @@ public class Main {
                 // Ho la spesa
             }
         });
+
+        Spesa spesa = new Spesa(null, 0, new Payer("fab"));
+        spesa.saveSpesa(bus, "msg");
+
+        
     }
 
 }
