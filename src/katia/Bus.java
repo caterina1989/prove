@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 public class Bus {
     //
@@ -24,9 +25,10 @@ public class Bus {
      * Spara un evento
      * 
      * @param eventName
-     * @param map       
+     * @param map
+     * @param msg
      */
-    public void fireEvent(String eventName, Object p) {
+    public void fireEvent(String eventName, Map<String, Object> map, String msg) {
         //
         Iterator<Event> iterator = events.iterator();
         //
@@ -36,7 +38,7 @@ public class Bus {
             //
             if (eventName.equals(event.getName())) {
                 //
-                event.onEvent(p);
+                event.onEvent(map, msg);
             }
         }
     }

@@ -1,7 +1,9 @@
+import java.util.Map;
+
 public interface Event {
 
     public abstract String getName();
 
-    public abstract void onEvent(Object param);
+    public abstract void onEvent(Map<String,Object> map, String msg);
 
 }

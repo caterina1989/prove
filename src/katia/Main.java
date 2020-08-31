@@ -17,7 +17,7 @@ public class Main {
         });
 
         Spesa spesa = new Spesa(null, 0, new Payer("fab"));
-        spesa.saveSpesa(bus);
+        spesa.saveSpesa(bus, "msg");
 
         bus.registerEvent(new EventSave() {
 
